@@ -25,8 +25,8 @@ cleaned_data = raw_data.drop_duplicates() \
 
 cleaned_data.show()
 
-cleaned_data_path = "data/clean_data/"
+# cleaned_data_path = "data/clean_data/"
+#
+# cleaned_data.write.mode('overwrite').parquet(cleaned_data_path)
 
-cleaned_data.write.mode('overwrite').parquet(cleaned_data_path)
-
-spark.stop()
+# spark.stop()
