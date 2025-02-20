@@ -29,4 +29,4 @@ cleaned_data.show()
 #
 # cleaned_data.write.mode('overwrite').parquet(cleaned_data_path)
 
-# spark.stop()
+spark.stop()
