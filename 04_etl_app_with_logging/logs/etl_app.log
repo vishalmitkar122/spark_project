@@ -1,0 +1,16 @@
+2025-02-21 11:48:55,759 - main_logger - INFO - SparkSession initialized successfully.
+2025-02-21 11:48:57,898 - data_cleaning_logger - ERROR - Error during data cleaning: [PATH_NOT_FOUND] Path does not exist: file:/C:/Users/Vishal/originalprojectpst/spark_project/spark_project/04_etl_app_with_logging/data/input/employee_new.csv.
+2025-02-21 11:48:57,903 - main_logger - CRITICAL - Critical error in ETL process: [PATH_NOT_FOUND] Path does not exist: file:/C:/Users/Vishal/originalprojectpst/spark_project/spark_project/04_etl_app_with_logging/data/input/employee_new.csv.
+Traceback (most recent call last):
+  File "C:\Users\Vishal\originalprojectpst\spark_project\spark_project\04_etl_app_with_logging\main.py", line 30, in main
+    clean_data(spark, paths['input'], paths['clean_data'])
+  File "C:\Users\Vishal\originalprojectpst\spark_project\spark_project\04_etl_app_with_logging\src\data_cleaning.py", line 18, in clean_data
+    df = spark.read.csv(input_path, header=True, inferSchema=True)
+  File "C:\Users\Vishal\originalprojectpst\spark_project\.venv\lib\site-packages\pyspark\sql\readwriter.py", line 740, in csv
+    return self._df(self._jreader.csv(self._spark._sc._jvm.PythonUtils.toSeq(path)))
+  File "C:\Users\Vishal\originalprojectpst\spark_project\.venv\lib\site-packages\py4j\java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "C:\Users\Vishal\originalprojectpst\spark_project\.venv\lib\site-packages\pyspark\errors\exceptions\captured.py", line 185, in deco
+    raise converted from None
+pyspark.errors.exceptions.captured.AnalysisException: [PATH_NOT_FOUND] Path does not exist: file:/C:/Users/Vishal/originalprojectpst/spark_project/spark_project/04_etl_app_with_logging/data/input/employee_new.csv.
+2025-02-21 11:48:58,017 - main_logger - INFO - SparkSession stopped. ETL process completed.
